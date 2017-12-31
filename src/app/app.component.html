@@ -1,0 +1,27 @@
+<div class="container" style="max-width: 500px;">
+  <h1>On the Subject of<br> Wire Sequences</h1>
+  <div class="row" [ngClass]="wire.status" *ngFor="let wire of wires" style="border: 1px solid gray; padding: 5px; margin: 5px;">
+    <div class="col-sm-2">
+      <h2>{{ wire.id }}</h2>
+      <h3 *ngIf="wire.cut" style="color: darkred; font-weight: bold;">CUT</h3>
+    </div>
+    <div class="col-sm-10">
+      <div class="col-sm-6">
+        <button [ngClass]="wire.color == 'red' ? 'selected': 'notSelected'" style="color: red;" (click)="wire.setColor('red')">Red</button>
+        <button [ngClass]="wire.color == 'blue' ? 'selected': 'notSelected'" style="color: blue;" (click)="wire.setColor('blue')">Blue</button>
+        <button [ngClass]="wire.color == 'black' ? 'selected': 'notSelected'" style="color: black;" (click)="wire.setColor('black')">Black</button>
+        <button [ngClass]="wire.color == 'none' ? 'selected': 'notSelected'" style="color: darkgray;" (click)="wire.setColor('none')">No Wire</button>
+      </div>
+      <div class="col-sm-6">
+        <button [ngClass]="wire.connection == 'a' ? 'selected': 'notSelected'" (click)="wire.setConnection('a')">A</button>
+        <button [ngClass]="wire.connection == 'b' ? 'selected': 'notSelected'" (click)="wire.setConnection('b')">B</button>
+        <button [ngClass]="wire.connection == 'c' ? 'selected': 'notSelected'" (click)="wire.setConnection('c')">C</button>
+        <button [ngClass]="wire.connection == 'none' ? 'selected': 'notSelected'" (click)="wire.setConnection('none')">No Wire</button>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="text-align: center;">
+      <button (click)="solve()">Solve</button>
+      <button (click)="addPanel()">Next Panel</button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+button
+{
+    width: 100px;
+    margin: 2px;
+}
+
+button:hover
+{
+    background-color: lightyellow;
+}
+
+.resolved
+{
+    background-color: lightgray;
+}
+
+.active
+{
+    background-color: white;
+}
+
+.solved
+{
+    background-color: lightblue;
+}
+
+.selected
+{
+    font-weight: bolder;
+    border: 3px solid black;
+}
+
+.notSelected
+{
+    font-weight: normal;
+    border: 1px solid darkgray;
+}
